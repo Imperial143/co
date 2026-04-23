@@ -602,6 +602,19 @@ docker stop <container_id>
 docker rm <container_id>
 docker run -d -p 8083:80 -v myvolume:/usr/share/nginx/html nginx
 docker ps
+docker run -it -v myvolume:/data ubuntu bash
+cd /data
+echo "Docker Volume Persistence Test" > test.txt
+exit
+docker stop <container_id>
+docker rm <container_id>
+docker run -it -v myvolume:/data ubuntu bash
+cd /data
+cat test.txt
+exit
+docker run -it -v myvolume:/data ubuntu bash
+echo "<h1>Persistent Web Page</h1>" > /data/index.html
+exit
 
 (18)Docker Image Push to Docker Hub
 
