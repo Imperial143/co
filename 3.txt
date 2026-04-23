@@ -615,6 +615,7 @@ exit
 docker run -it -v myvolume:/data ubuntu bash
 echo "<h1>Persistent Web Page</h1>" > /data/index.html
 exit
+docker volume inspect myvolume
 
 (18)Docker Image Push to Docker Hub
 
